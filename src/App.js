@@ -25,6 +25,7 @@ const App = () => {
     }
 
     // if items exist then loop through the cart in case of same item increase its quantity in case of different item push the item to the cartItems array
+    
     for (let i = 0; i < cartItems.length; i++) {
       if (cartItems[i].id === itemToAdd.id) {
         cartItems[i]["quantity"] = cartItems[i]["quantity"] + 1;

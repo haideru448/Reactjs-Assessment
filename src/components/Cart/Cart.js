@@ -7,11 +7,10 @@ const Cart = ({ items, total, removeItemFromCart }) => {
 
   useEffect(() => {
     var countedTotal = 0;
-    items.forEach((item) => (countedTotal += item.price*item.quantity));
+    items.forEach((item) => (countedTotal += item.price * item.quantity));
 
     setItemsAmount(countedTotal);
   }, [items]);
-
 
   return (
     <div>
@@ -35,7 +34,9 @@ const Cart = ({ items, total, removeItemFromCart }) => {
               <div className="alert alert-info">Cart is empty</div>
             )}
             {/* show total upto two decimals */}
-            <div className="cart__total">Total: {itemsAmount.toFixed(2)} USD</div>
+            <div className="cart__total">
+              Total: {itemsAmount.toFixed(2)} USD
+            </div>
           </div>
         </div>
       </div>

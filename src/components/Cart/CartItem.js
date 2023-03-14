@@ -8,9 +8,8 @@ const CartItem = ({
   image,
   id,
   removeItem,
-  quantity
+  quantity,
 }) => {
-  
   return (
     <div className="cart-item">
       <div>
@@ -29,8 +28,11 @@ const CartItem = ({
           X
         </button>
         <b>
-          <span className="cart-item__name">{name}</span><br/>
-          <span className="cart-item__quantity">Quantity: {quantity?quantity:1}</span>
+          <span className="cart-item__name">{name}</span>
+          <br />
+          <span className="cart-item__quantity">
+            Quantity: {quantity ? quantity : 1}
+          </span>
         </b>
       </div>
       <b>
