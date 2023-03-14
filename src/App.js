@@ -18,14 +18,14 @@ const App = () => {
   };
 
   const addItemInCart = (itemToAdd) => {
+
     // if no item in the cart simply push the item we got
     if (cartItems.length === 0) {
       setCartItems([{ ...itemToAdd, quantity: 1 }]);
       return;
     }
-
+   
     // if items exist then loop through the cart in case of same item increase its quantity in case of different item push the item to the cartItems array
-    
     for (let i = 0; i < cartItems.length; i++) {
       if (cartItems[i].id === itemToAdd.id) {
         cartItems[i]["quantity"] = cartItems[i]["quantity"] + 1;
@@ -33,22 +33,23 @@ const App = () => {
       }
       if (i === cartItems.length - 1) {
         cartItems.push({ ...itemToAdd, quantity: 1 });
-        break;
+        break
       }
     }
-
+    
     // set the items to update the state
 
     setCartItems([...cartItems]);
   };
 
   const removeItemFromCart = (itemId) => {
+    
     for (let i = 0; i < cartItems.length; i++) {
       if (cartItems[i].id === itemId) {
         // if items quantity is greater than 1 then decrease the quantity else if quantity is 1 simply remove the item
         if (cartItems[i]["quantity"] > 1) {
           cartItems[i]["quantity"] = cartItems[i]["quantity"] - 1;
-          break;
+          break
         } else {
           cartItems = cartItems.filter((item) => item.id !== itemId);
           break;
